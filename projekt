@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="u.js"></script>
+</head>
+<body>
+    <div class="glowny">
+        <div class="licznik"></div>
+        <div class="fajka_holder">
+        <div class="fajka"></div>
+        <div class="fajka"></div>
+    </div>
+    <button type="reset">reset</button>
+    </div>
+    <div class="gra">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="uu">
+        <div class="u">
+            <b><p>zrobione przez <br> co sie tu dzieje</p></b>
+        </div>
+    </div>
+</body>
+</html>
+
+
+body{
+    background-color: dimgray;
+    height: 70px;
+}
+.glowny{
+    background-color: gainsboro;
+    width: 40%;
+    height: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   margin-left: 30%;
+   border-radius: 10px;
+}
+.licznik{
+    background-color: aliceblue;
+    color: dimgray;
+    font-size: 45px;
+    width: 15%;
+    height: 70px;
+    margin: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fajka_holder{
+    background-color: gainsboro;
+    width: 400px;
+    height: 70px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.fajka{
+    background-color: aliceblue;
+    width: 100%;
+    height: 30px;
+    margin: 3px;
+}
+
+button{
+    background-color: aliceblue;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 15px;
+    border-color: aliceblue;
+    margin-left: 30px;
+}
+.gra{
+    background-color: dimgray;
+    border-radius: 15px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+table{
+    border-collapse: collapse;
+    border: 8px dimgray solid;
+}
+td{
+    border: 6px gainsboro solid;
+    border-collapse: collapse;
+    width: 100px;
+    height: 100px;
+}
+.uu{
+    background-color: gainsboro;
+    border-radius: 15px;
+    padding: 15px;
+    width: 38%;
+    height: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+   margin-left: 30%;
+   border-radius: 10px;
+}
+.u{
+    background-color: aliceblue;
+    color: dimgray;
+    font-size: 20px;
+    width: 60%;
+    height: 50px;
+    margin:200px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
+const licznik = document.querySelector("#licznik > p")
+const fields = document.querySelectorAll("td")
+let licznik_s = 0
+let licznik_m
+field
+
+ let czasomierz = setInterval(() => {
+    licznik_s++
+    if(licznik_s == 60){
+      licznik_m++
+      licznik_s = 0;
+    }
+    if(licznik_s < 10){
+      licznik.textContent = `${licznik_m}:0${licznik_s}`;
+    }else{
+      licznik.textContent =  `${licznik_m}:${licznik_s}`;
+    }
+
+  },1000);
+
+  const fileds = document.querySelectorAll("td")
+    console.log(fileds)
+     for (const ele of fileds){
+     ele.addEventListener("click" , (e) =>{
+    e.target.innerHTML , "O"});
+  }
+
+  const reset = () =>{
+
+  clearInterval(czasomierz)
+   licznik.textContent = "0:00"
+
+  for(let field of fields){
+    field.textContent = ""
+  }
+  
+  for(let score of scores){
+    score.textContent =""
+  }
+  }
